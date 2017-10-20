@@ -1,12 +1,13 @@
 import socket
+import HomeNetServer.protocol.spotter as prt
 
 
 class ClientFinder(object):
     def __init__(self):
         # Create a UDP Broadcast socket
         self.lst_Client = ()
-        self.hello_msg = "HomeNetServer"
-        self.port = 1000
+        self.hello_msg = prt.server_spotter_keyword
+        self.port = 2000
         print("Looking for run UDP clients on port " + str(self.port))
 
     def search(self):
